@@ -1,0 +1,35 @@
+{
+  "name": "goose",
+  "version": "0.0.2",
+  "description": "A bot for all cults",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "keywords": [
+    "goose",
+    "discord",
+    "bot",
+    "js",
+    "latest"
+  ],
+  "author": "LemonsHQ",
+  "license": "ISC",
+  "dependencies": {
+    "clever-bot-api": "^1.4.1",
+    "cleverbot-free": "^1.1.6",
+    "directory-import": "^2.3.0",
+    "discord.js": "^13.5.1",
+    "fs": "0.0.1-security",
+    "node-fetch": "^2.6.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LemonsHQ/Goose-Recoded.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LemonsHQ/Goose-Recoded/issues"
+  },
+  "homepage": "https://github.com/LemonsHQ/Goose-Recoded#readme"
+}

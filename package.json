@@ -4,7 +4,7 @@
   "description": "A bot for all cults",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js"
+    "test": "node index.js"
   },
   "keywords": [
     "goose",

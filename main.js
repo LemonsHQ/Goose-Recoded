@@ -2,6 +2,7 @@ module.exports = {
     maindepend : function(){
         Discord = require('discord.js');
         fs = require('fs');
+        ytch = require('yt-channel-info');
         config = require('./config.json')
         client = new Discord.Client({
             intents: [
@@ -25,7 +26,7 @@ module.exports = {
         require(`./modules/commands/destroy.js`).destroy()
     },
     modules : function(){
-        require(`./modules/templatecommand.js`).template()
+        //require(`./modules/templatecommand.js`).template()
         require(`./modules/youtube.js`).youtube()
     }
 }

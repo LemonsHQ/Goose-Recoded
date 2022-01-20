@@ -10,6 +10,7 @@ module.exports = {
                 .setAuthor({name: `${client.user.username}`, icon: `${client.user.displayAvatarURL()}`})
                 .setDescription(`Purges up to 100 messages from chat!`)
                 .addField('Command Options:',`${comands}`)
+                .addField('Requires:','Manage messages permission')
                 .setURL('')
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()

@@ -19,9 +19,13 @@ module.exports = {
             ],partials: ["CHANNEL"]
         })
     },
-    modules : function(){
-        require(`./modules/templatecommand.js`).template()
+    commands : function(){
         require(`./modules/commands/purge.js`).purge()
         require(`./modules/commands/flipcoin.js`).coin()
+        require(`./modules/commands/destroy.js`).destroy()
+    },
+    modules : function(){
+        require(`./modules/templatecommand.js`).template()
+        require(`./modules/youtube.js`).youtube()
     }
 }

@@ -1,5 +1,3 @@
-const { get } = require("express/lib/response");
-
 module.exports = {
     coin : function() {
         function getRandomInt(min, max) {

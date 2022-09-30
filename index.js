@@ -1,5 +1,6 @@
+
 try{
-    const main = require('./main')
+    const main = require('./main.js')
     main.maindepend()
     main.commands()
     main.modules()

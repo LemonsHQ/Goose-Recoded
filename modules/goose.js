@@ -10,13 +10,22 @@ function getRandomInt(min, max) {
 
 module.exports = {
     goose : function() {
-        //AI 
         client.on('messageCreate', async message => {
-            if (message.author.bot) return;
+            if (message.author.bot) return
             if (message.channel.name == 'goose-chat') {
                 if (message.author.id == '821863429421137920'){
-                    if(message.content.toLowerCase().includes('pp')){
-                        return message.reply('pp')
+                    if(message.content.toLowerCase().startsWith('pp') && message.content.toLowerCase().endsWith('pp')){
+                        if(message.content.toLowerCase().match(/([p])/)){
+                            if(null){
+                                return
+                            } 
+                            else {
+                                return message.channel.send('pp')
+                            }
+                        } 
+                        else {
+                            return
+                        }
                     }
                 }
                 
@@ -25,6 +34,7 @@ module.exports = {
                         return message.channel.send('I like Liam he is the best!');
                     }
                 }
+
                 if (message.content.toLowerCase().includes('liam')){
                     if (message.content.toLowerCase().includes('gay')){
                         if (message.content.toLowerCase().includes('not')){
@@ -34,6 +44,7 @@ module.exports = {
                         }
                     }
                 }
+
                 message.content = message.content.replace(/@(everyone)/gi, "everyone").replace(/@(here)/gi, "here");
                 if (!message.content) return message.channel.send('You do realize you have to speak to actually talk right?');
                 fetch(`https://chatbot-api.vercel.app/api/?message={${encodeURIComponent(message.content)}}&name=Goose&developer_name=Lemons&user=1241516346&age=12&vocabulary=20000&birthplace=Alabama&birthyear=2010&gender=female&species=bird`)

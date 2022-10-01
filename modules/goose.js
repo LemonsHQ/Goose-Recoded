@@ -16,7 +16,7 @@ module.exports = {
                 if (message.author.bot) return;
                 if (message.content.toLowerCase().startsWith('who is')){
                     if(message.content.toLowerCase().endsWith('liam')){
-                        return message.channel.send('I like Liam, he is the server icon for the Friends guild!');
+                        return message.channel.send('I like Liam he is the best!');
                     }
                 }
                 if (message.content.toLowerCase().includes('liam')){

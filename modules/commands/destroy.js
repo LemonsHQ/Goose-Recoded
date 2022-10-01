@@ -3,7 +3,10 @@ module.exports = {
         client.on('interactionCreate', async (command) => {
             if (!command.isCommand()) return;
             const { commandName, description, type, options } = command       
-            commandName == 'destroy' ? command.reply({content:'Shutting down...',ephemeral:true}) : false
-        });
+            if(commandName == 'destroy') {
+                command.reply({content:'Shutting down...',ephemeral:true})
+                client.destroy();
+            } 
+        })
     }   
 }

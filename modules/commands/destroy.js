@@ -1,19 +1,14 @@
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { PermissionFlagsBits } = require('discord-api-types/v10');
 module.exports = {
-    destroy : function() {
-        client.on('interactionCreate', async (command) => {
-            if (!command.isCommand()) return;
-            const { commandName, description, type, options } = command
-            {      
-                if(commandName == 'destroy') {
-                    if(command.permissions.has(PermissionBitField.Flags.ManageRoles)) {
-                        await command.reply({content:'Shutting down...',ephemeral:true})
-                        client.destroy();
-                    }
-                    else {
-                        await command.reply({content:'No Permission',ephemeral:true})
-                    }
-                } 
-            }
-        })
-    }   
-}
+	data : new SlashCommandBuilder()
+		.setName('destroy')
+		.setDescription('Reboots goose')
+		.setDefaultMemberPermissions(PermissionFlagsBits.ManageRoles),
+};
+client.on('interactionCreate', interaction => {
+	if (interaction.commandName === 'destroy') {
+		interaction.reply({content:'Rebooting...',ephemeral:true})
+		client.destroy();
+	}
+});

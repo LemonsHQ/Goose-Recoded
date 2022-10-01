@@ -1,32 +1,26 @@
-module.exports = {
-    purge: function () {
-
-        client.on('interactionCreate', async (command) => {
-            if (!command.isCommand()) return;
-            const { commandName, description, type, options } = command  
-            let cmdoptns = `An integer value from 1-100 without decimals`       
-            purge = new Discord.MessageEmbed()
-                .setColor('#1500f7')
-                .setTitle(`**${commandName}**`)
-                .setAuthor({name: `${client.user.username}`, icon: `${client.user.displayAvatarURL()}`})
-                .setDescription(`Purges up to 100 messages from chat!`)
-                .addField('Command Options:',`${cmdoptns}`)
-                .addField('Requires:','Manage messages permission')
-                .setURL('')
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTimestamp()
-
-                if(commandName == 'purge' && isNan(options)){
-                    if(command.permissions.has(PermissionBitField.Flags.ManageRoles)) {  
-                        command.channel.bulkDelete(options)
-                    } 
-                    else {
-                        await command.reply({content:'No Permission',ephemeral:true})
-                    }
-                } 
-                else {
-                    await command.reply({content:"Working...",embeds:[purge],ephemeral:true})
-                }
-        })
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { PermissionFlagsBits } = require('discord-api-types/v10');
+module.exports = {  
+	data: new SlashCommandBuilder()
+		.setName('purge')
+		.setDescription('Purges Messages from chat!')
+        .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages | PermissionFlagsBits.ManageRoles)
+        .addIntegerOption(option => {
+            return option
+            .setName('amount')
+            .setDescription('Up to 100')
+            .setRequired(true)
+        }),
+        execute(interaction){
+            if (interaction.commandName === 'purge') {
+            }
+        }
+};
+client.on('interactionCreate', interaction => {
+    if (interaction.commandName === 'purge') {
+        let amount = interaction.options.getInteger('amount')
+        if (isNaN(amount)) return  interaction.reply({content:'You must specify a number',ephemeral:true});
+        interaction.reply({content:'Purging...',ephemeral:true})
+        interaction.channel.bulkDelete(amount)
     }
-}
+});

@@ -1,10 +1,14 @@
 module.exports = {
     maindepend : function(){
-        fetch = require('node-fetch')
-        Discord = require('discord.js')
-        fs = require('fs')
-        ytch = require('yt-channel-info')
+        SlashCommandBuilder = require('@discordjs/builders');
+        PermissionFlagsBits = require('discord-api-types/v10');
+        REST = require('@discordjs/rest');
+        ROUTES = require('discord-api-types/v9');
+        Discord = require('discord.js');
+        fs = require('fs');
+        ytch = require('yt-channel-info');
         config = require('./config.json')
+        fetch = require('node-fetch');
         client = new Discord.Client({
             intents: [
                 Discord.Intents.FLAGS.GUILDS,
@@ -21,13 +25,10 @@ module.exports = {
             ],partials: ["CHANNEL"]
         })
     },
-    commands : function(){
-        require(`./modules/commands/purge.js`).purge()
-        require(`./modules/commands/flipcoin.js`).coin()
-        require(`./modules/commands/destroy.js`).destroy()
-    },
     modules : function(){
         require(`./modules/goose.js`).goose()
-        require(`./modules/newmember.js`).new()
+        require(`./modules/commands/destroy.js`)
+        require(`./modules/commands/flipcoin.js`)
+        require(`./modules/commands/purge.js`)
     }
 }

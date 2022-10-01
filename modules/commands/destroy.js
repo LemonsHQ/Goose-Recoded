@@ -5,7 +5,7 @@ module.exports = {
             const { commandName, description, type, options } = command
             {      
                 if(commandName == 'destroy') {
-                    if(command.author.permissions.has(PermissionBitField.Flags.ManageRoles)) {
+                    if(command.permissions.has(PermissionBitField.Flags.ManageRoles)) {
                         await command.reply({content:'Shutting down...',ephemeral:true})
                         client.destroy();
                     }

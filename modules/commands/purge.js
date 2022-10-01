@@ -17,7 +17,7 @@ module.exports = {
                 .setTimestamp()
 
                 if(commandName == 'purge' && isNan(options)){
-                    if(command.author.permissions.has(PermissionBitField.Flags.ManageRoles)) {  
+                    if(command.permissions.has(PermissionBitField.Flags.ManageRoles)) {  
                         command.channel.bulkDelete(options)
                     } 
                     else {

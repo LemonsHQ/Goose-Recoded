@@ -47,7 +47,7 @@ module.exports = {
 
                 message.content = message.content.replace(/@(everyone)/gi, "everyone").replace(/@(here)/gi, "here");
                 if (!message.content) return message.channel.send('You do realize you have to speak to actually talk right?');
-                fetch(`https://chatbot-api.vercel.app/api/?message={${encodeURIComponent(message.content)}}&name=Goose&developer_name=Lemons&user=1241516346&age=12&vocabulary=20000&birthplace=Alabama&birthyear=2010&gender=female&species=bird`)
+                fetch(`https://chatbot-api.vercel.app/api/?message={${encodeURIComponent(message.content)}}&name=Goose&developer_name=Lemons&user=1241516346&vocabulary=20000&birthplace=Alabama&birthyear=2010&gender=female&species=bird`)
                     .then(res => res.json())
                     .then(data => {
                         if(!data.message || message.content == data.message) return message.channel.send('ERROR: 404 \nCould not connect')

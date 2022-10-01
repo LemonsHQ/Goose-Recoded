@@ -8,7 +8,7 @@ try{
     client.on('ready', () =>{
         console.log('ready')
         const guild = client.guilds.cache.forEach(guild => guild.id);
-        client.application.commands.delete('')
+        //client.application.commands.delete('')
         console.log('Application Commands Deleted')
         client.application.commands.create({
             name: 'ping',

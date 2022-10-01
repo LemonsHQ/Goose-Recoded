@@ -3,11 +3,16 @@ module.exports = {
         client.on('interactionCreate', async (command) => {
             if (!command.isCommand()) return;
             const { commandName, description, type, options } = command
-            if(command.permissions == 'MANAGE_ROLES') {       
+            {      
                 if(commandName == 'destroy') {
-                    command.reply({content:'Shutting down...',ephemeral:true})
-                    client.destroy();
-                }
+                    if(command.author.permissions.has(PermissionBitField.Flags.ManageRoles)) {
+                        await command.reply({content:'Shutting down...',ephemeral:true})
+                        client.destroy();
+                    }
+                    else {
+                        await command.reply({content:'No Permission',ephemeral:true})
+                    }
+                } 
             }
         })
     }   

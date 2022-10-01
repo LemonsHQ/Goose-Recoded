@@ -15,14 +15,18 @@ module.exports = {
                 .setURL('')
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
-            if(command.permissions == 'MANAGE_ROLES') { 
+
                 if(commandName == 'purge' && isNan(options)){
-                    command.channel.bulkDelete(options)
+                    if(command.author.permissions.has(PermissionBitField.Flags.ManageRoles)) {  
+                        command.channel.bulkDelete(options)
+                    } 
+                    else {
+                        await command.reply({content:'No Permission',ephemeral:true})
+                    }
                 } 
                 else {
                     await command.reply({content:"Working...",embeds:[purge],ephemeral:true})
-                } 
-            } 
+                }
         })
     }
 }

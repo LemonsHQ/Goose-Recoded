@@ -12,8 +12,14 @@ module.exports = {
     goose : function() {
         //AI 
         client.on('messageCreate', async message => {
+            if (message.author.bot) return;
             if (message.channel.name == 'goose-chat') {
-                if (message.author.bot) return;
+                if (message.author.id == '821863429421137920'){
+                    if(message.content.toLowerCase().includes('pp')){
+                        return message.reply('pp')
+                    }
+                }
+                
                 if (message.content.toLowerCase().startsWith('who is')){
                     if(message.content.toLowerCase().endsWith('liam')){
                         return message.channel.send('I like Liam he is the best!');

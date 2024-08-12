@@ -12,7 +12,7 @@ module.exports = {
     goose : function() {
         client.on('messageCreate', async message => {
             if (message.author.bot) return
-            if (message.channel.name == 'goose-chat') {
+            if (message.channel.name == 'goose-chat' || message.channel.name == '🎉goose-chat') {
                 if (message.author.id == '821863429421137920'){
                     if(message.content.toLowerCase().startsWith('pp') && message.content.toLowerCase().endsWith('pp')){
                         if(message.content.toLowerCase().match(/([p])/)){
@@ -51,7 +51,7 @@ module.exports = {
                     .then(res => res.json())
                     .then(data => {
                         if(!data.message || message.content == data.message) return message.channel.send('ERROR: 404 \nCould not connect')
-                        client.user.setStatus('invisible')
+                        client.user.setStatus('online')
                         message.channel.send(`${data.message}`);
                     });
                     

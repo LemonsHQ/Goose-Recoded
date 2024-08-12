@@ -1,13 +1,12 @@
 module.exports = {
     maindepend : function(){
-        SlashCommandBuilder = require('@discordjs/builders');
-        PermissionFlagsBits = require('discord-api-types/v10');
-        REST = require('@discordjs/rest');
-        ROUTES = require('discord-api-types/v9');
+        //SlashCommandBuilder = require('@discordjs/builders');
+        //PermissionFlagsBits = require('discord-api-types/v10');
+       // REST = require('@discordjs/rest');
+        //ROUTES = require('discord-api-types/v9');
         Discord = require('discord.js');
         fs = require('fs');
         ytch = require('yt-channel-info');
-        config = require('./config.json')
         fetch = require('node-fetch');
         client = new Discord.Client({
             intents: [
@@ -27,8 +26,9 @@ module.exports = {
     },
     modules : function(){
         require(`./modules/goose.js`).goose()
-        require(`./modules/commands/destroy.js`)
-        require(`./modules/commands/flipcoin.js`)
-        require(`./modules/commands/purge.js`)
+		require(`./modules/newmember.js`).new()
+        require(`./modules/colorcommand.js`).colors()
+        require(`./modules/help.js`).help()
+        //require(`./modules/purge.js`).purge()
     }
 }

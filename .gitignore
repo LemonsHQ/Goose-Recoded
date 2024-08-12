@@ -4,11 +4,6 @@ config.json
 /modules/birthdays.js
 /modules/gooseslow.js
 /modules/notes.txt
-/modules/commands
 /backup
 package-lock.json
-.envrc
-flake.lock
-flake.nix
-.direnv
 .idea

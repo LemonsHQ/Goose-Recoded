@@ -1,6 +1,6 @@
 {
   "name": "goose",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A bot for all cults",
   "main": "index.js",
   "scripts": {
@@ -16,13 +16,9 @@
   "author": "LemonsHQ,Lempac",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/builders": "^1.8.2",
     "discord-api-types": "^0.37.93",
     "discord.js": "^14.15.3",
-    "dotenv": "^16.4.5",
-    "fs": "0.0.1-security",
-    "node-fetch": "^3.3.2",
-    "yt-channel-info": "^3.2.1"
+    "dotenv": "^16.4.5"
   },
   "repository": {
     "type": "git",

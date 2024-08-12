@@ -17,7 +17,7 @@ module.exports = {
                 return message.author.send( messageToLowerCase.includes('not') ? 'No... he is 50/50' : 'Its 50/50');
             }
 
-            message.content = message.content.replace(/@(everyone)/gi, "everyone").replace(/@(here)/gi, "here");
+            message.content = message.content.replace(/@everyone/g, "everyone").replace(/@here/g, "here");
             if (!message.content) return message?.channel.send('You do realize you have to speak to actually talk right?');
 
             let urlSearchParms = new URLSearchParams();
@@ -32,7 +32,7 @@ module.exports = {
             urlSearchParms.append('species', 'bird');
             let url = new URL('https://chatbot-api.vercel.app/api')
             url.search = urlSearchParms.toString()
-            await fetch(url)
+            fetch(url)
             .then(res => res.json())
             .then(data => {
                 if(!data.message || message.content === data.message) return message?.channel.send('ERROR: 404 \nCould not connect')

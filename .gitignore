@@ -4,6 +4,6 @@ config.json
 /modules/birthdays.js
 /modules/gooseslow.js
 /modules/notes.txt
-/modules/commands
 /backup
 package-lock.json
+.idea

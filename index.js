@@ -11,24 +11,26 @@ client.commands.set(reboot.data.name, reboot);
 client.commands.set(flipcoin.data.name, flipcoin);
 client.commands.set(purge.data.name, purge);
 
-// and deploy your commands!(ONLY RUN IF COMMANDS CHANGE IN DISCORD CLIENT i.e. when text, options or name changes)
-// const rest = new REST().setToken(process.env.token);
-// (async () => {
-//     try {
-//         console.log(`Started refreshing ${client.commands.length} application (/) commands.`);
-//
-//         // The put method is used to fully refresh all commands in the guild with the current set
-//         const data = await rest.put(
-//             Routes.applicationGuildCommands(process.env.application_id, process.env.dev_server),
-//             {body: client.commands.map(command => command.data.toJSON())},
-//         );
-//
-//         console.log(`Successfully reloaded ${data.length} application (/) commands.`);
-//     } catch (error) {
-//         // And of course, make sure you catch and log any errors!
-//         console.error(error);
-//     }
-// })();
+ /* 
+ //and deploy your commands!(ONLY RUN IF COMMANDS CHANGE IN DISCORD CLIENT i.e. when text, options or name changes)
+ const rest = new REST().setToken(process.env.token);
+ (async () => {
+     try {
+         console.log(`Started refreshing ${client.commands.length} application (/) commands.`);
+
+         // The put method is used to fully refresh all commands in the guild with the current set
+         const data = await rest.put(
+             Routes.applicationGuildCommands(process.env.application_id, process.env.dev_server),
+             {body: client.commands.map(command => command.data.toJSON())},
+         );
+
+         console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+     } catch (error) {
+         // And of course, make sure you catch and log any errors!
+         console.error(error);
+     }
+ })(); 
+ */
 
 client.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;

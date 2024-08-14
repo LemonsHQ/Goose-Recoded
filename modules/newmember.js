@@ -22,7 +22,7 @@ module.exports = {
                 member.send('Welcome back Amelia!\n I love you!!! \n💛💛💛💛💛💛💛💛');
             }
 
-            client.channels.cache.get(process.env.welcome_channel_id).send({
+            client.channels.cache.get(process.env.welcome_channel_id)?.send({
                 embeds: [
                     new EmbedBuilder()
                         .setColor('#FFC0CB')

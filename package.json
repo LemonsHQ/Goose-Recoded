@@ -1,6 +1,6 @@
 {
   "name": "goose",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A bot for all cults",
   "main": "index.js",
   "scripts": {

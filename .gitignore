@@ -7,3 +7,4 @@ config.json
 /backup
 package-lock.json
 .idea
+command_checksum.txt

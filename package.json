@@ -16,7 +16,6 @@
   "author": "LemonsHQ,Lempac",
   "license": "ISC",
   "dependencies": {
-    "commandkit": "^0.1.10",
     "discord-api-types": "^0.37.93",
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5"

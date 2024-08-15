@@ -8,7 +8,7 @@ new CommandKit({
     client,
     commandsPath: `${__dirname}/modules/commands`,
     eventsPath: `${__dirname}/modules/events`,
-    bulkRegister: false,
+    bulkRegister: true,
 });
 //The configuration
 require('dotenv').config();

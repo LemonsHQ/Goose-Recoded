@@ -1,6 +1,7 @@
 const {Client, Partials, GatewayIntentBits} = require('discord.js');
 module.exports = {
     maindepend: function () {
+        const { existsSync, writeFile, readFile } = require('fs');
         // ytch = require('yt-channel-info');
         global.client = new Client({
             intents: [
@@ -20,8 +21,8 @@ module.exports = {
         })
     },
     modules: function () {
-        require('./modules/goose').goose()
-        require('./modules/newmember').new()
+        require('./modules/otherfunc/goose').goose()
+        require('./modules/otherfunc/newmember').new()
         global.color = require('./modules/commands/color')
         global.help = require('./modules/commands/help')
         global.purge = require('./modules/commands/purge')

@@ -1,6 +1,10 @@
 const {SlashCommandBuilder, PermissionFlagsBits} = require('discord.js')
-module.exports = {
-    data: new SlashCommandBuilder()
+const data = {
+    name: 'purge',
+    description: 'Purges Messages from chat!',
+}
+async function run({interaction}){
+    new SlashCommandBuilder()
         .setName('purge')
         .setDescription('Purges Messages from chat!')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
@@ -9,10 +13,8 @@ module.exports = {
                 .setDescription('Up to 100')
                 .setMaxValue(100)
                 .setRequired(true)
-        ),
-
-    async execute(interaction) {
-        await interaction.reply({content: 'Purging...', ephemeral: true});
-        await interaction.channel.bulkDelete(interaction.options.getInteger('amount'));
-    }
+        )
+    await interaction.reply({content: 'Purging...', ephemeral: true});
+    await interaction.channel.bulkDelete(interaction.options.getInteger('amount'));
 }
+module.exports = { data, run }

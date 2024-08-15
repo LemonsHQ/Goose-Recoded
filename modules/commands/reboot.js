@@ -1,11 +1,13 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-module.exports = {
-	data : new SlashCommandBuilder()
-		.setName('reboot')
-		.setDescription('Reboots goose')
-		.setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
-	async execute(interaction) {
-		await interaction.reply({content:'Rebooting...',ephemeral:true})
-		interaction.client.destroy();
-	}
-};
+const data = {
+	name:'reboot',
+	description: 'Reboots goose',
+}
+
+async function run({interaction}){
+	new SlashCommandBuilder()
+		.setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+	await interaction.reply({content:'Rebooting...',ephemeral:true})
+	interaction.client.destroy();
+}
+module.exports = {data, run}

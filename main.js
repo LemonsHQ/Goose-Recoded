@@ -1,4 +1,5 @@
 const {Client, Partials, GatewayIntentBits} = require('discord.js');
+const color = require('./modules/commands/color');
 module.exports = {
     maindepend: function () {
         // ytch = require('yt-channel-info');

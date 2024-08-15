@@ -28,5 +28,6 @@ module.exports = {
         global.purge = require('./modules/commands/purge')
         global.reboot = require('./modules/commands/reboot')
         global.flipcoin = require('./modules/commands/flipcoin')
+        global.intro = require('./modules/commands/intro')
     }
 }

@@ -19,8 +19,8 @@ async function updateClientCommands() {
     try {
         console.log(`Started refreshing ${commands.size} application (/) commands.`);
         const d = rest.put(Routes.applicationCommands(process.env.application_id), { body: [] })
-        .then(() => console.log('Successfully deleted all application commands.'))
-        .catch(console.error)
+            .then(() => console.log('Successfully deleted all application commands.'))
+            .catch(console.error)
         // The put method is used to fully refresh all commands in the guild with the current set
         const data = await rest.put(
             Routes.applicationGuildCommands(process.env.application_id, process.env.dev_server),

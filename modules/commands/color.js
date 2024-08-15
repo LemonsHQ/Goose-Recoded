@@ -23,6 +23,6 @@ module.exports = {
         }
         await interaction.member.roles.remove(interaction.member.roles.cache.filter(role => role.name.startsWith('#')))
         await interaction.member.roles.add(colorRole)
-        await interaction.reply('Done...')
+        await interaction.reply('You are now beautiful.')
     },
 }

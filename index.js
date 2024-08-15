@@ -18,15 +18,15 @@ async function updateClientCommands() {
     const rest = new REST().setToken(process.env.token);
     try {
         console.log(`Started refreshing ${commands.size} application (/) commands.`);
-        /*
-        Deleting the slash commands
-        const d = rest.put(Routes.applicationCommands(process.env.application_id), { body: [] })
-            .then(() => console.log('Successfully deleted all application commands.'))
-            .catch(console.error)
-        const data = rest.put(Routes.applicationGuildCommands(process.env.application_id, process.env.dev_server), { body: [] })
-            .then(() => console.log('Successfully deleted all guild commands.'))
-            .catch(console.error);
-        */
+
+        //Deleting the slash commands
+        // const d = rest.put(Routes.applicationCommands(process.env.application_id), { body: [] })
+        //     .then(() => console.log('Successfully deleted all application commands.'))
+        //     .catch(console.error)
+        // const data = rest.put(Routes.applicationGuildCommands(process.env.application_id, process.env.dev_server), { body: [] })
+        //     .then(() => console.log('Successfully deleted all guild commands.'))
+        //     .catch(console.error);
+
         // The put method is used to fully refresh all commands in the guild with the current set
         const data = await rest.put(
             Routes.applicationGuildCommands(process.env.application_id, process.env.dev_server),
@@ -100,7 +100,7 @@ client.on('ready', () => {
         status: PresenceUpdateStatus.Online,
         activities: [{name: 'for /help', type: ActivityType.Watching}]
     });
-    //updateClientCommands()
+    // updateClientCommands()
 });
 
 client.login(process.env.token);

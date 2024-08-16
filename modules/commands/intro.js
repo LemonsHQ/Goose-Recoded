@@ -2,8 +2,8 @@ const {SlashCommandBuilder, EmbedBuilder} = require('discord.js')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('into')
-        .setDescription('Makes your intro.')
+        .setName('intro')
+        .setDescription('Makes your intro(Doesnt work dont try it). \nIncludes your Name, Likes, Dislikes, reason for joining, or your birthday.')
         .addStringOption(option =>
             option.setName('name')
                 .setDescription('your fucking name you twat')
@@ -26,7 +26,7 @@ module.exports = {
             option.setName('reason')
                 .setDescription('The Reason you joined')
                 .setMaxLength(200)
-                .setRequired(true)
+                .setRequired(false)
         )        
         .addStringOption(option => 
             option.setName('birthday')
@@ -41,6 +41,7 @@ module.exports = {
         let like = interaction.options.getString('likes')
         let disl = interaction.options.getString('dislikes')
         let name = interaction.options.getString('name')
+        if (null) return;
         await interaction.reply({
         embeds: [
             new EmbedBuilder()
@@ -48,26 +49,25 @@ module.exports = {
                 .setTitle(`Intro for ${interaction.options.getString('name')}`)
                 .setAuthor({name: interaction.client.user.displayName, iconURL: avit})
                 .setDescription('My Intro!')
-                .addFields(
-                    {
-                        name: 'name',
-                        value: name
+                .addFields({
+                        name: 'Name:',
+                        value: `${name}`
                     },
                     {
-                        name: 'birf',
-                        value: birf
+                        name: 'Birthday:',
+                        value: `${birf}`
                     },
                     {
-                        name:'reason',
-                        value: reas
+                        name:'Reason:',
+                        value: `${reas}`
                     },
                     {
                         name: 'dislikes',
-                        value: disl
+                        value: `${disl}`
                     },
                     {
                         name: 'likes',
-                        value: like
+                        value: `${like}`
                     }
                 )
                 .setThumbnail(avit)

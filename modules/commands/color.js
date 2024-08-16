@@ -3,7 +3,7 @@ const {SlashCommandBuilder} = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('color')
-        .setDescription('Gives a role based on color hex code.')
+        .setDescription(`Gives a role based on color hex code.\nExample: /color #000000 (For Black)`)
         .addStringOption(option =>
             option.setName('hex-code')
                 .setDescription('color hex code')

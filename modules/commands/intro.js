@@ -3,7 +3,7 @@ const {SlashCommandBuilder, EmbedBuilder} = require('discord.js')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('intro')
-        .setDescription('Makes your intro(Doesnt work dont try it). \nIncludes your Name, Likes, Dislikes, reason for joining, or your birthday.')
+        .setDescription('Makes your intro(Doesnt work dont try it).')
         .addStringOption(option =>
             option.setName('name')
                 .setDescription('your fucking name you twat')

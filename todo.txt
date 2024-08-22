@@ -1,0 +1,7 @@
+- Preset color options
+- Make an intro command
+- add a goose-chat creation feature for other servers
+- profanity filter
+Waaaaaay down the line
+- make a meme archive
+- make a private feature for goose to RECREATE all of Happy Birthday in an empty server

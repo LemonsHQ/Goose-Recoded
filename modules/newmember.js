@@ -28,15 +28,15 @@ module.exports = {
                         .setColor('#FFC0CB')
                         .setTitle(`Welcome to ${member.guild.name}, ${member.displayName}!`)
                         .setAuthor({name: client.user.displayName, iconURL: client.user.displayAvatarURL()})
-                        .setDescription(`Make sure to read the rules <@${member.user.id}>!`)
+                        .setDescription('Make sure to read the Rules!')
                         .addFields({name: '\u200B', value: 'Dont forget to checkout the other related server info!'})
                         .setThumbnail(member.guild.iconURL())
                         .setTimestamp()
                 ]
             })
-            
-            .then(embedMessage => ['🥳',/*'🎊', '🎂',*/'🎉'].forEach(emoji => embedMessage.react(emoji), embedMessage.reply(`Make sure to welcome <@${member.user.id}>!`)));
-            
+                .then(embedMessage =>
+                    ['🥳', '🎊', '🎂', '🎉'].forEach(emoji => embedMessage.react(emoji))
+                );
         })
     }
 }

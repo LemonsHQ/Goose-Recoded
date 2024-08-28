@@ -12,6 +12,7 @@ commands.set(reboot.data.name, reboot);
 commands.set(flipcoin.data.name, flipcoin);
 commands.set(purge.data.name, purge);
 commands.set(color.data.name, color);
+//commands.set(intro.data.name, intro);
 
 //and deploy your commands!(ONLY RUN IF COMMANDS CHANGE IN DISCORD CLIENT i.e. when text, options or name changes)
 async function updateClientCommands() {

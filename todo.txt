@@ -1,6 +1,19 @@
+# Next
+- Make ai
+
+# In progress
 - Make an intro command
-- add a goose-chat creation feature for other servers
-- profanity filter
-Waaaaaay down the line
+
+# Finished
+- color command
+- welcome message
+- help command
+- purge command
+- reboot command
+
+
+# Way down the line
 - make a meme archive
 - make a private feature for goose to RECREATE all of Happy Birthday in an empty server
+- add a goose-chat creation feature for other servers
+- profanity filter

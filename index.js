@@ -50,6 +50,8 @@ function stringToHash(str) {
     }
     return hash;
 }
+
+/* This part keeps erroring so I added "updateClientCommands()" to client ready
 console.log("Reading command checksum...")
 if(existsSync("./command_checksum.txt")){
     readFile("./command_checksum.txt", 'utf8', (err, data) => {
@@ -57,11 +59,13 @@ if(existsSync("./command_checksum.txt")){
         if (data.toString() !== stringToHash(JSON.stringify(commands.map(command => command.data.toJSON()))).toString()){
             console.log("Checksum doesnt equal, updating commands...")
             updateClientCommands()
+            
             console.log("Making checksum...")
             writeFile("./command_checksum.txt", stringToHash(JSON.stringify(commands.map(command => command.data.toJSON()))).toString(), (err) => {
                 if (err) throw err;
                 console.log('Saved command checksum...');
             })
+            
         } else {
             console.log("All up to date!")
         }
@@ -75,6 +79,7 @@ if(existsSync("./command_checksum.txt")){
         console.log('Saved command checksum...');
     })
 }
+*/
 
 client.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;
@@ -101,7 +106,7 @@ client.on('ready', () => {
         status: PresenceUpdateStatus.Online,
         activities: [{name: 'for /help', type: ActivityType.Watching}]
     });
-    // updateClientCommands()
+    updateClientCommands()
 });
 
 client.login(process.env.token);

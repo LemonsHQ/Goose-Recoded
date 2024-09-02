@@ -1,10 +1,10 @@
-const { Events, PresenceUpdateStatus } = require('discord.js');
-const responses = require('respones.js').arrays()
+const { Client, Events, PresenceUpdateStatus } = require('discord.js');
+const responses = require('./responses.js').arrays()
 
 module.exports = {
     read : function() {
         client.on(Events.MessageCreate, async message => {
-            if (!message.author.bot()) {
+            if (!message.author.bot() && message.channelId == '1270558578612240464') {
                 //the instances of a conversation
                 let instance1 = message.content.toLowerCase().includes(responses.greetings);
                 let instance2 = message.content.toLowerCase().includes(responses.greetings && responses.convos1);

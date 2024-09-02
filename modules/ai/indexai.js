@@ -17,7 +17,7 @@ and example being the user says hi and the bot goes to the category labeled gree
 simply declare, & double check pathing
 
 
-const ai = require(ai/ai.js)
+const ai = require('./modules/ai/indexai.js')
 ai.load()
 
 
@@ -25,7 +25,7 @@ in your index file
 */
 module.exports = {
     load: function () {
-        response = require('respond.js'),
+        response = require('./response.js'),
         response.read()
     }
 }

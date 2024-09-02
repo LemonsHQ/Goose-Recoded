@@ -2,6 +2,8 @@ require('dotenv').config();
 const { existsSync, writeFile, readFile } = require('fs');
 const main = require('./main.js')
 const {Collection, ActivityType, PresenceUpdateStatus, Routes, REST, Events} = require("discord.js");
+
+
 commands = new Collection();
 main.maindepend()
 main.modules()

@@ -23,6 +23,7 @@ module.exports = {
     modules: function () {
         require('./modules/goose').goose()
         require('./modules/newmember').new()
+        require('./modules/ai/indexai.js').load()
         global.color = require('./modules/commands/color')
         global.help = require('./modules/commands/help')
         global.purge = require('./modules/commands/purge')

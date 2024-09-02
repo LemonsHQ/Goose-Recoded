@@ -1,4 +1,3 @@
-- Preset color options
 - Make an intro command
 - add a goose-chat creation feature for other servers
 - profanity filter

@@ -4,21 +4,21 @@ const responses = require('./responses.js').arrays()
 module.exports = {
     read : function() {
         client.on(Events.MessageCreate, async message => {
-            if (!message.author.bot() && message.channelId == '1270558578612240464') {
+            if (!message.author.bot && message.channelId === process.env.goose_chat) {
                 //the instances of a conversation
-                let instance1 = message.content.toLowerCase().includes(responses.greetings);
-                let instance2 = message.content.toLowerCase().includes(responses.greetings && responses.convos1);
-                let instance3 = message.content.toLowerCase().includes(responses.greetings && responses.convos2);
-                let instance4 = message.content.toLowerCase().includes(responses.resexp);
+                let content = message.content.toLowerCase()
+
+                let instance1 = responses.greetings.some(word => content.includes(word));
+                let instance2 = responses.greetings.concat(responses.convos1).some(word => content.includes(word));
+                let instance3 = responses.greetings.concat(responses.convos2).some(word => content.includes(word));
+                let instance4 = responses.resexp.some(word => content.includes(word));
                 if(instance1) {
                     //the corresponding objects in the array
-                    let int = Math.floor(Math.random() * 10) + 1
-                    message.reply(responses.greetings[int])
+                    let int = Math.floor(Math.random() * 10)
+                    return message.reply(responses.greetings[int])
                 }else if (instance2){
-                    let int = Math.floor(Math.random() * 4) + 1
-                    message.reply(responses.expressions)
-                }else{
-                    return;
+                    let int = Math.floor(Math.random() * 4)
+                    return message.reply(responses.expressions[int])
                 }
             }
         });

@@ -54,5 +54,7 @@ module.exports = {
             school = [],
             work = [],
         ]
+        return { "greetings": greetings, "convos1": convos1, "convos2": convos2, "expressions": expressions, "resexp": resexp, "lh": lh, "likedis": likedis,"yesno": yesno, "topics": topics};
+
     }
 }

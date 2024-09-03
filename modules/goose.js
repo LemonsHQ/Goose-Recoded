@@ -9,6 +9,10 @@ module.exports = {
                 return message?.channel.send('pp');
             }
 
+            if(/*message.author.id === process.env.pp_user && */messageToLowerCase.startsWith('banana') && messageToLowerCase.endsWith('bread')) {
+                return message?.channel.send('banana bread');
+            }
+
             if (messageToLowerCase.startsWith('who is') && messageToLowerCase.endsWith('liam')){
                 return message?.channel.send('I like Liam he is the best!');
             }

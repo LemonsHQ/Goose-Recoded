@@ -5,7 +5,7 @@ module.exports = {
             if (message.author.bot || message.channelId !== process.env.goose_chat) return;
             let messageToLowerCase = message.content.toLowerCase();
 
-            if(/*message.author.id === process.env.pp_user && */messageToLowerCase.startsWith('pp') && messageToLowerCase.endsWith('pp')) {
+            if(message.author.id === process.env.pp_user && messageToLowerCase.startsWith('pp') && messageToLowerCase.endsWith('pp')) {
                 return message?.channel.send('pp');
             }
 
